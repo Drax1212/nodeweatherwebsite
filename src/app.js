@@ -7,6 +7,7 @@ const {
     title
 } = require('process')
 const app = express()
+const port = process.env.PORT || 3000
 //Define paths
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.set('view engine',
@@ -105,6 +106,6 @@ app.get('*', (req, res) => {
     })
 })
 //Start server
-app.listen(3000, () => {
-    console.log('Server started on port 3000')
+app.listen(port, () => {
+    console.log('Server started on port ' + port)
 })
